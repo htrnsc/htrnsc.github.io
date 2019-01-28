@@ -100,7 +100,7 @@ input, select, textarea {
 		background-position: top left, bottom left, auto;
 		background-size: auto, 100% 100%, cover;
 		background-attachment: fixed;
-		background-repeat: repeat, no-repeat, auto;
+		background-repeat: no-repeat;
 		position: relative;
 		background-color: #150C07;
 		line-height: 1.75em;
@@ -119,18 +119,9 @@ input, select, textarea {
 			transition: none !important;
 		}
 
-		@media screen and (max-width: 1280px) {
-
-			body {
-				background-attachment: scroll;
-			}
-
-		}
-
 		@media screen and (max-width: 736px) {
 
 			body {
-				background-attachment: scroll;
 				background-size: auto, 100% 100%, 250% auto;
 				background-repeat: repeat, no-repeat, no-repeat;
 				background-position: top left, bottom left, 50% 0%;
@@ -180,9 +171,9 @@ input, select, textarea {
 		transition: color 0.25s ease-in-out;
 	}
 
-		a:hover {
-			color: #d64760;
-		}
+	a:hover {
+		color: #d64760;
+	}
 
 	h1, h2, h3, h4, h5, h6 {
 		font-weight: 400;
@@ -248,45 +239,37 @@ input, select, textarea {
 
 /* List */
 
-	ul.icons {
-		cursor: default;
-		margin: 0 0 0.5em 0;
+ul.icons {
+	cursor: default;
+	margin: 0 0 0.5em 0;
+}
+
+ul.icons li {
+	display: inline-block;
+	font-size: 1.5em;
+	margin-left: 1em;
+}
+
+ul.icons li span {
+	display: none;
+}
+
+ul.icons li a {
+	opacity: 0.35;
+	color: #fff;
+	-moz-transition: opacity 0.25s ease-in-out;
+	-webkit-transition: opacity 0.25s ease-in-out;
+	-ms-transition: opacity 0.25s ease-in-out;
+	transition: opacity 0.25s ease-in-out;
+}
+
+	ul.icons li a:hover {
+		opacity: 1.0;
 	}
 
-		ul.icons li {
-			display: inline-block;
-			font-size: 1.5em;
-			margin-left: 1em;
-		}
-
-			ul.icons li span {
-				display: none;
-			}
-
-			ul.icons li a {
-				opacity: 0.35;
-				color: #fff;
-				-moz-transition: opacity 0.25s ease-in-out;
-				-webkit-transition: opacity 0.25s ease-in-out;
-				-ms-transition: opacity 0.25s ease-in-out;
-				transition: opacity 0.25s ease-in-out;
-			}
-
-				ul.icons li a:hover {
-					opacity: 1.0;
-				}
-
-			ul.icons li:first-child {
-				margin-left: 0;
-			}
-
-		@media screen and (max-width: 736px) {
-
-			ul.icons {
-				margin: 0 0 2em 0;
-			}
-
-		}
+ul.icons li:first-child {
+	margin-left: 0;
+}
 
 /* Icons */
 
@@ -685,6 +668,7 @@ header li{
 header #branding{
 	float: left;
 	font-size: 24px;
+	margin-top: 7px;
 }
 
 header #branding h1{
@@ -716,6 +700,7 @@ header a:hover{
 }
 
 #showcase h1{
+	margin-top: 100px;
 	font-size: 32px;
 	letter-spacing: 3px;
 	padding: 15px;
@@ -728,7 +713,17 @@ header a:hover{
 #footer {
 	width: 100%;
 	padding: 1.5em;
-	display: -moz-flex;
+}
+
+#footer .copyright{
+    float: left;
+}
+
+#footer .icons{
+	float: right;
+	align-items: right;
+}
+/*	display: -moz-flex;
 	display: -webkit-flex;
 	display: -ms-flex;
 	display: flex;
@@ -738,7 +733,7 @@ header a:hover{
 	justify-content: space-between;
 	position: relative;
 	z-index: 10002;
-}
+} */
 
 /* #footer > section:first-child {
 	text-align: left;
@@ -769,7 +764,15 @@ header a:hover{
 } */
 
 @media screen and (max-width: 980px) {
+	#showcase p{
+		padding: 0;
+	}
 
+	#showcase h1{
+		line-height: 1;
+		padding-top: 0;
+	}
+	
 	#footer {
 		-moz-flex-direction: column;
 		-webkit-flex-direction: column;
@@ -793,6 +796,7 @@ header a:hover{
 	header{
 		text-align: center;
 	}
+
 	header #branding{
 		float: none;
 	}
@@ -801,37 +805,28 @@ header a:hover{
 		float: none;
 	}
 
+	#showcase{
+		background: url('../../images/laptop-sm.jpg') no-repeat;
+	}
+
 	#showcase h1{
 		line-height: 1;
+		padding-top: 0;
 	}
+
 	#showcase p{
 		padding: 0;
 	}
 
 	#footer {
+		float: none;
 		text-align: center;
-		padding: 3em;
-	}
-
-	#footer > section:first-child {
-		text-align: center;
-		max-width: 100%;
-	}
-
-	#footer > section:last-child {
-		text-align: center;
-		max-width: 100%;
+		padding: 2em;
 	}
 
 	#footer .copyright li {
-		display: block;
-		margin: 0.75em 0 0 0;
 		padding-left: 0;
 		border-left: 0;
-	}
-
-	#footer .copyright li:first-child {
-		margin-top: 0;
 	}
 }
 
